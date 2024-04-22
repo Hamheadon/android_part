@@ -9,4 +9,6 @@
         <item>Kg</item>
         <item>Liter</item>
     </string-array>
+    <string name="add_shoppingList">Add Shopping List</string>
+    <string name="hint_list">List Name...</string>
 </resources>
