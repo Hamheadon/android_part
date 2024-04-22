@@ -5,14 +5,12 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "shoppingList")
+@Entity(tableName = "shoppingList", primaryKeys = {"listId", "name"})
 public class ShoppingList {
-
-    @PrimaryKey(autoGenerate = true)
+    
     public int listId;
 
     @NonNull
-    @PrimaryKey
     @ColumnInfo(name = "name")
     public String name;
 
