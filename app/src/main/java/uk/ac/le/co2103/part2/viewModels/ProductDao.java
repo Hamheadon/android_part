@@ -18,10 +18,16 @@ public interface ProductDao {
     @Insert
     void insert(Product product);
 
+
     //TODO: check that no error comes from here
     @Query("SELECT * from Product Order by Name ASC")
-    LiveData<List<ShoppingList>> getShoppingList();
+    LiveData<List<Product>> findAll();
 
     @Query("DELETE FROM Product")
     void deleteAll();
+
+    @Query("SELECT * FROM Product WHERE parentId = :id")
+    public LiveData<List<Product>> findByParentId(int id);
+
+
 }

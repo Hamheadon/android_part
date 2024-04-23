@@ -5,31 +5,28 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "shoppingList", primaryKeys = {"listId", "name"})
+import java.util.List;
+
+@Entity(tableName = "shoppingList", primaryKeys = {"customId", "listId"})
 public class ShoppingList {
-    
+
+
+    @ColumnInfo(name = "listId")
     public int listId;
 
     @NonNull
     @ColumnInfo(name = "name")
     public String name;
 
-    @NonNull @ColumnInfo(name = "image")
+    @ColumnInfo(name = "image")
     public String image;
 
-    @NonNull @ColumnInfo(name = "quantity")
-    public int quantity;
-
-    @NonNull @ColumnInfo(name = "unit")
-    public String unit;
 
 
-    public ShoppingList(@NonNull String name, @NonNull String image, @NonNull  int quantity,
-                        @NonNull String unit){
+
+    public ShoppingList(@NonNull String name){
         this.name = name;
-        this.image = image;
-        this.quantity = quantity;
-        this.unit = unit;
+
     }
 
 }
