@@ -19,7 +19,7 @@ public interface ProductDao {
     void insert(Product product);
 
     //TODO: check that no error comes from here
-    @Query("SELECT * from shoppingList Order by Name ASC")
+    @Query("SELECT * from Product Order by Name ASC")
     LiveData<List<ShoppingList>> getShoppingList();
 
     @Query("DELETE FROM Product")
