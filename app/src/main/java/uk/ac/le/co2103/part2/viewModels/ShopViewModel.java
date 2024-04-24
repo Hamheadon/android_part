@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+import uk.ac.le.co2103.part2.models.Product;
 import uk.ac.le.co2103.part2.models.ShoppingList;
 import uk.ac.le.co2103.part2.repos.ProductRepository;
 import uk.ac.le.co2103.part2.repos.ShoppingListRepository;
@@ -17,7 +18,10 @@ public class ShopViewModel extends AndroidViewModel {
 
     private final LiveData<List<ShoppingList>> allItems;
 
+
+
     public ShopViewModel(Application application) {
+
         super(application);
         repo = new ShoppingListRepository(application);
         p_repo = new ProductRepository(application);
@@ -28,4 +32,10 @@ public class ShopViewModel extends AndroidViewModel {
     public void insert(ShoppingList item) {
         repo.insert(item);
     }
+
+    public List<Product> getListProducts(ShoppingList list){
+        LiveData<List<Product>> listProducts = p_repo.findSelectGroup(list.listId);
+        return listProducts.getValue();
+    }
 }
+

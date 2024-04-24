@@ -16,6 +16,8 @@ public class ProductRepository {
     private ProductDao productDao;
     private LiveData<List<Product>> allProducts;
 
+    private LiveData<List<Product>> selectGroup;
+
     public ProductRepository(Application application) {
         ProductsDb db = ProductsDb.getDatabase(application);
         productDao = db.ProductsDao();
@@ -30,5 +32,12 @@ public class ProductRepository {
         ShoppingListsDb.databaseWriteExecutor.execute(() -> {
             productDao.insert(product);
         });
+    }
+
+    public LiveData<List<Product>> findSelectGroup(int id){
+        ShoppingListsDb.databaseWriteExecutor.execute(() -> {
+            selectGroup = productDao.findByParentId(id);
+        });
+        return selectGroup;
     }
 }

@@ -29,4 +29,8 @@ public class ShoppingList {
 
     }
 
+    public String getItem(){
+        return name;
+    }
+
 }

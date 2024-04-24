@@ -21,7 +21,7 @@ public class Product {
     @NonNull @ColumnInfo(name = "unit")
     public String unit;
 
-    @NonNull @ColumnInfo(name = "")
+    @NonNull @ColumnInfo(name = "parentId")
     public int parentId;
 
     public Product(@NonNull int quantity, @NonNull String unit){
