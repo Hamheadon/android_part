@@ -7,30 +7,47 @@ import androidx.room.PrimaryKey;
 
 import java.util.List;
 
-@Entity(tableName = "shoppingList", primaryKeys = {"customId", "listId"})
+@Entity(tableName = "shoppingList", primaryKeys = {"listId"})
 public class ShoppingList {
 
-
-    @ColumnInfo(name = "listId")
-    public int listId;
+    @ColumnInfo(name = "listId") //TODO: make auto generated
+    private int listId;
 
     @NonNull
     @ColumnInfo(name = "name")
-    public String name;
+    private String name;
 
     @ColumnInfo(name = "image")
-    public String image;
+    private String image;
 
-
-
-
-    public ShoppingList(@NonNull String name){
+    public ShoppingList(int listId, @NonNull String name) {
+        this.listId = listId;
         this.name = name;
-
+        this.image = null;
     }
 
-    public String getItem(){
+    public int getListId() {
+        return listId;
+    }
+
+    public void setListId(int listId) {
+        this.listId = listId;
+    }
+
+    @NonNull
+    public String getName() {
         return name;
     }
 
+    public void setName(@NonNull String name) {
+        this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

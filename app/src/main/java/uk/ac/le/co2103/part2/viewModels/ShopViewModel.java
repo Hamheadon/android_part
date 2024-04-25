@@ -34,7 +34,7 @@ public class ShopViewModel extends AndroidViewModel {
     }
 
     public List<Product> getListProducts(ShoppingList list){
-        LiveData<List<Product>> listProducts = p_repo.findSelectGroup(list.listId);
+        LiveData<List<Product>> listProducts = p_repo.findSelectGroup(list.getListId());
         return listProducts.getValue();
     }
 }

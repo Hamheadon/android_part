@@ -26,7 +26,7 @@ public class ShoppingListListAdapter extends ListAdapter<ShoppingList, ShoppingL
     @Override
     public void onBindViewHolder(ShoppingListView holder, int position) {
         ShoppingList current = getItem(position);
-        holder.bind(current.getItem());
+        holder.bind(current.getName());
     }
     static class ItemDiff extends DiffUtil.ItemCallback<ShoppingList> {
         @Override
@@ -35,7 +35,7 @@ public class ShoppingListListAdapter extends ListAdapter<ShoppingList, ShoppingL
         }
         @Override
         public boolean areContentsTheSame(@NonNull ShoppingList oldShoppingList, @NonNull ShoppingList newShoppingList) {
-            return oldShoppingList.getItem().equals(newShoppingList.getItem());
+            return oldShoppingList.getName().equals(newShoppingList.getName());
         }
     }
 }

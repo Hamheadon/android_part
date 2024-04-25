@@ -11,4 +11,18 @@
     </string-array>
     <string name="add_shoppingList">Add Shopping List</string>
     <string name="hint_list">List Name...</string>
+
+    <string name="placeholderName">End-of-Week Shopping</string>
+
+    <string-array name="placeholderText">
+        <item>End of Week</item>
+        <item>Eid</item>
+        <item>House Party</item>
+        <item>Christmas</item>
+        <item>Easter</item>
+        <item>Picnic</item>
+        <item>Diwali</item>
+        <item>Halloween</item>
+        <item>Ramadan</item>
+    </string-array>
 </resources>

@@ -51,7 +51,7 @@ public abstract class ShoppingListsDb extends RoomDatabase {
             databaseWriteExecutor.execute(() -> {
                 ShoppingListDao dao = INSTANCE.ShoppingListDao();
                 dao.deleteAll();
-                ShoppingList shoppingList = new ShoppingList("Name");
+                ShoppingList shoppingList = new ShoppingList(0,"listIndex0");
                 dao.insert(shoppingList);
 
             });
