@@ -2,6 +2,8 @@ package uk.ac.le.co2103.part2;
 
 import static android.app.PendingIntent.getActivity;
 
+import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
+
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -13,6 +15,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,10 +25,11 @@ import android.widget.Toast;
 
 public class CreateListActivity extends AppCompatActivity {
 
-    public static final String shoppingListName = "uk.edu.le.co2103.part2.ShoppingList.name";
+    public static String shoppingListName = "uk.edu.le.co2103.part2.ShoppingList.name";
     TextView nameInput;
     ImageView imageSelector;
     Button selectorBtn;
+    Button createBtn;
     ActivityResultLauncher<Intent> resultLauncher;
 
     @Override
@@ -38,15 +42,27 @@ public class CreateListActivity extends AppCompatActivity {
         registerImageSelection();
         selectorBtn.setOnClickListener(view -> pickImage());
 
+        shoppingListName = String.valueOf(findViewById(R.id.name_Input));
+        createBtn = findViewById(R.id.create_button);
+
+        createBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(TAG, "Shopping list Name is:" + shoppingListName);
+            }
+
+
+        });
+
     }
 
-    public void createShoppingList(View view){
-        Intent intent = new Intent(this, MainActivity.class);
-        EditText editText = (EditText) view.getRootView().findViewById(R.id.name_Input);
-        String message = editText.getText().toString();
-        intent.putExtra(shoppingListName, message);
-        startActivity(intent);
-    }
+//    public void createShoppingList(View view){
+//        Intent intent = new Intent(this, MainActivity.class);
+//        EditText editText = (EditText) view.getRootView().findViewById(R.id.name_Input);
+//        String message = editText.getText().toString();
+//        intent.putExtra(shoppingListName, message);
+//        startActivity(intent);
+//    }
 
 
     private void pickImage()
