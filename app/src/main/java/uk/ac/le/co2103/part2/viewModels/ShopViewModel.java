@@ -28,7 +28,7 @@ public class ShopViewModel extends AndroidViewModel {
         allItems = repo.getAllLists();
 
     }
-    LiveData<List<ShoppingList>> getAllItems() { return allItems; }
+    public LiveData<List<ShoppingList>> getAllItems() { return allItems; }
     public void insert(ShoppingList item) {
         repo.insert(item);
     }

@@ -49,8 +49,8 @@ public class SL_RecyclerViewAdapter extends RecyclerView.Adapter<SL_RecyclerView
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.imageView2);
-            tvShopingLisName = itemView.findViewById(R.id.textView);
+            imageView = itemView.findViewById(R.id.listImage);
+            tvShopingLisName = itemView.findViewById(R.id.listName);
         }
     }
 }
