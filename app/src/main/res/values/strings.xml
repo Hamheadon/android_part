@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PART2 Shopping List</string>
+    <string name="app_name">ShopList</string>
     <string name="add_product">Add Product</string>
     <string name="hint_product">Product Name</string>
     <string name="button_save">Save</string>
@@ -29,4 +29,5 @@
     <string name="createButton">Create</string>
     <string name="listImageAdd">Add an Image</string>
     <string name="option_btn_width">100</string>
+    <string name="newShoppingListTitle">New Shopping List</string>
 </resources>
