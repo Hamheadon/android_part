@@ -19,17 +19,21 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.ArrayList;
 
 import uk.ac.le.co2103.part2.models.ShoppingList;
 import uk.ac.le.co2103.part2.viewModels.ShopViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private ShopViewModel shopViewModel;
 
     ArrayList<ShoppingList> shoppingListModels = new ArrayList<>();
 
      private static final String TAG = MainActivity.class.getSimpleName();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = findViewById(R.id.shoppingRecyclerView);
+
+
+        setUpShoppingListModels();
+
+
+
 
 
         ShoppingListListAdapter adapter = new ShoppingListListAdapter();
@@ -79,5 +89,14 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //
 //    }
+
+    public void setUpShoppingListModels(){
+        String[] shoppingListNames = getResources().getStringArray(R.array.placeholderText);
+
+        for(int i = 0; i<shoppingListNames.length; i++){ //Todo: add images later
+            shoppingListModels.add(new ShoppingList(shoppingListNames[i]));
+        }
+
+    }
 
 }

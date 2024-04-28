@@ -20,15 +20,29 @@ import uk.ac.le.co2103.part2.viewModels.ShopViewModel;
 public class ShoppingListListAdapter extends ListAdapter<ShoppingList, ShoppingListViewHolder> {
 
 
+
     public ShoppingListListAdapter()
     {
         super(ShoppingListListAdapter.DIFF_CALLBACK);
     }
 
+
+
+    private ShopViewModel shopViewModel;
+    ArrayList<ShoppingList> shoppingListsModels;
+    public ShoppingListListAdapter(@NonNull DiffUtil.ItemCallback<ShoppingList> diffCallback)
+
+    {
+        super(ShoppingListListAdapter.DIFF_CALLBACK);
+    }
+
+
     //TODO: problem area
+
+
     @NonNull
     @Override
-    public ShoppingListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    public ShoppingListViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
         return ShoppingListViewHolder.create(parent);
     }
@@ -49,6 +63,10 @@ public class ShoppingListListAdapter extends ListAdapter<ShoppingList, ShoppingL
 
 
     }
+
+
+
+
     public static final DiffUtil.ItemCallback<ShoppingList> DIFF_CALLBACK =
             new DiffUtil.ItemCallback<ShoppingList>() {
                 @Override

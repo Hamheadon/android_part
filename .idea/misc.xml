@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/activity_create_list.xml" value="0.38594970703125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35476379394531243" />
         <entry key="app/src/main/res/layout/recycler_view_row.xml" value="0.1" />
@@ -12,6 +12,15 @@
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
+=======
+        <entry key="app/src/main/res/layout/create_list_activity.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/recycler_view_row.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/recyclerview_item.xml" value="0.2947916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+>>>>>>> bfe2e3f340687880f397c70e0b1d018b970986ac
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

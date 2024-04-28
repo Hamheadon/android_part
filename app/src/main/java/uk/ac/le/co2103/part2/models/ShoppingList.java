@@ -11,13 +11,7 @@ import java.util.Objects;
 @Entity(tableName = "shoppingList")
 public class ShoppingList {
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ShoppingList that = (ShoppingList) o;
-        return getListId() == that.getListId() && Objects.equals(getName(), that.getName()) && Objects.equals(getImage(), that.getImage());
-    }
+
 
     @Override
     public int hashCode() {
@@ -25,6 +19,8 @@ public class ShoppingList {
     }
 
     @PrimaryKey(autoGenerate = true)
+
+
     @ColumnInfo(name = "listId") //TODO: make auto generated
     private int listId;
 
@@ -35,7 +31,9 @@ public class ShoppingList {
     @ColumnInfo(name = "image")
     private String image;
 
+
     public ShoppingList(@NonNull String name) {
+
         this.name = name;
         this.image = null;
     }
@@ -64,4 +62,13 @@ public class ShoppingList {
     public void setImage(String image) {
         this.image = image;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ShoppingList that = (ShoppingList) o;
+        return getListId() == that.getListId() && Objects.equals(getName(), that.getName()) && Objects.equals(getImage(), that.getImage());
+    }
+
 }
+

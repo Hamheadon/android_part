@@ -2,6 +2,7 @@ package uk.ac.le.co2103.part2;
 
 import static android.app.PendingIntent.getActivity;
 
+
 import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 
 import androidx.activity.result.ActivityResult;
@@ -10,6 +11,17 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+
+
+
+import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 
 import android.content.Intent;
@@ -24,11 +36,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import java.util.List;
 import java.util.Objects;
 
 import uk.ac.le.co2103.part2.models.ShoppingList;
 import uk.ac.le.co2103.part2.viewModels.ShopViewModel;
+
 
 public class CreateListActivity extends AppCompatActivity {
     private ShopViewModel shopViewModel;
@@ -55,6 +69,7 @@ public class CreateListActivity extends AppCompatActivity {
         shopViewModel.getAllLists().observe(this, items -> {
             adapter.submitList(items);
         });
+
 
         shoppingListName = String.valueOf(findViewById(R.id.name_Input));
         createBtn = findViewById(R.id.create_button);
@@ -89,21 +104,28 @@ public class CreateListActivity extends AppCompatActivity {
 
 
 
+
             }
 
 
         });
+
     }
 
 
 
-//    public void createShoppingList(View view){
-//        Intent intent = new Intent(this, MainActivity.class);
-//        EditText editText = (EditText) view.getRootView().findViewById(R.id.name_Input);
-//        String message = editText.getText().toString();
-//        intent.putExtra(shoppingListName, message);
-//        startActivity(intent);
-//    }
+
+
+
+
+/*
+    public void createShoppingList(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        EditText editText = (EditText) view.getRootView().findViewById(R.id.name_Input);
+        String message = editText.getText().toString();
+        intent.putExtra(shoppingListName, message);
+        startActivity(intent);
+    }*/
 
 
     private void pickImage()
@@ -117,9 +139,15 @@ public class CreateListActivity extends AppCompatActivity {
                     @Override
                     public void onActivityResult(ActivityResult result) {
                         try {
+
                             selectImageLocation = result.getData().getData();
 
                             imageSelector.setImageURI(selectImageLocation);
+
+                            Uri imageUri = result.getData().getData();
+
+                            imageSelector.setImageURI(imageUri);
+
                         } catch (Exception e){
                             Toast.makeText(CreateListActivity.this, "No image selected", Toast.LENGTH_SHORT).show();
 
