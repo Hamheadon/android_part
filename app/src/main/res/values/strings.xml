@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">PART2 Shopping List</string>
+    <string name="app_name">ShopList</string>
     <string name="add_product">Add Product</string>
-    <string name="hint_product">Product Name...</string>
+    <string name="hint_product">Product Name</string>
     <string name="button_save">Save</string>
 
     <string-array name="labels_unit">
@@ -10,5 +10,24 @@
         <item>Liter</item>
     </string-array>
     <string name="add_shoppingList">Add Shopping List</string>
-    <string name="hint_list">List Name...</string>
+    <string name="hint_list">List Name</string>
+
+    <string name="placeholderName">End-of-Week Shopping</string>
+
+    <string-array name="placeholderText">
+        <item>End of Week</item>
+        <item>Eid</item>
+        <item>House Party</item>
+        <item>Christmas</item>
+        <item>Easter</item>
+        <item>Picnic</item>
+        <item>Diwali</item>
+        <item>Halloween</item>
+        <item>Ramadan</item>
+    </string-array>
+    <string name="editText">Enter the name of the List</string>
+    <string name="createButton">Create</string>
+    <string name="listImageAdd">Add an Image</string>
+    <string name="option_btn_width">100</string>
+    <string name="newShoppingListTitle">New Shopping List</string>
 </resources>

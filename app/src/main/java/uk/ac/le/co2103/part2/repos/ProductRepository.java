@@ -20,7 +20,7 @@ public class ProductRepository {
 
     public ProductRepository(Application application) {
         ProductsDb db = ProductsDb.getDatabase(application);
-        productDao = db.ProductsDao();
+        productDao = db.ProductDao();
         allProducts = productDao.findAll();
     }
 
