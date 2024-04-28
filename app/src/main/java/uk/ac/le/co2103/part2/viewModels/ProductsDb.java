@@ -13,22 +13,20 @@ import uk.ac.le.co2103.part2.models.Product;
 import uk.ac.le.co2103.part2.models.ShoppingList;
 
 
-@Database(entities = {Product.class, ShoppingList.class}, version = 1, exportSchema = false)
+@Database(entities = {Product.class}, version = 1, exportSchema = false)
 public abstract class ProductsDb extends RoomDatabase {
 
-    public abstract ProductDao ProductsDao();
-
+    public abstract ProductDao ProductDao();
     private static volatile ProductsDb INSTANCE;
-    private static final int NUMBER_OF_THREADS = 4;
+    private static final int NUMBER_OF_THREADS = 3;
     static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
-
     public static ProductsDb getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (ProductsDb.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                    ProductsDb.class, "Products_db")
+                                    ProductsDb.class, "shoppingcart_db")
                             .build();
                 }
             }

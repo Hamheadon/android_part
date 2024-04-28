@@ -1,3 +1,4 @@
+
 package uk.ac.le.co2103.part2.viewModels;
 
 import android.app.Application;
@@ -16,26 +17,26 @@ public class ShopViewModel extends AndroidViewModel {
     private ShoppingListRepository repo;
     private ProductRepository p_repo;
 
-    private final LiveData<List<ShoppingList>> allItems;
+    private final LiveData<List<ShoppingList>> allLists;
 
 
 
     public ShopViewModel(Application application) {
 
-        super(application);
+       super(application);
         repo = new ShoppingListRepository(application);
         p_repo = new ProductRepository(application);
-        allItems = repo.getAllLists();
+        allLists = repo.getAllLists();
 
     }
-    LiveData<List<ShoppingList>> getAllItems() { return allItems; }
+    public LiveData<List<ShoppingList>> getAllLists() { return allLists; }
+
     public void insert(ShoppingList item) {
         repo.insert(item);
     }
 
     public List<Product> getListProducts(ShoppingList list){
-        LiveData<List<Product>> listProducts = p_repo.findSelectGroup(list.listId);
+        LiveData<List<Product>> listProducts = p_repo.findSelectGroup(list.getListId());
         return listProducts.getValue();
     }
 }
-

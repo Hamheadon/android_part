@@ -1,3 +1,4 @@
+
 package uk.ac.le.co2103.part2.repos;
 
 import android.app.Application;
@@ -17,7 +18,7 @@ public class ShoppingListRepository {
 
     public ShoppingListRepository(Application application) {
         ShoppingListsDb db = ShoppingListsDb.getDatabase(application);
-        shoppingListDao = db.ShoppingListDao();
+        shoppingListDao = db.shoppingListDao();
         allLists = shoppingListDao.getShoppingList();
     }
 

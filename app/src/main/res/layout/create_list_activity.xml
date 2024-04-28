@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="createShoppingList"
+    android:textAlignment="center"
+    tools:context=".CreateListActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="191dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="120dp"
+        android:text="@string/newShoppingListTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/name_Input"
+        android:layout_width="265dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/editText"
+        android:minHeight="48dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/shopListImgPreview"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/shopListImgPreview"
+        app:layout_constraintTop_toBottomOf="@+id/shopListImgPreview" />
+
+    <ImageView
+        android:id="@+id/shopListImgPreview"
+        android:layout_width="148dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@color/colorAccent"
+        tools:srcCompat="@drawable/product" />
+
+    <LinearLayout
+        android:layout_width="369dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/name_Input"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/name_Input"
+        app:layout_constraintTop_toBottomOf="@+id/name_Input">
+
+        <Button
+            android:id="@+id/selectImgBtn"
+            android:layout_width="148dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="104dp"
+            android:text="@string/listImageAdd" />
+
+        <Button
+            android:id="@+id/create_button"
+            android:layout_width="148dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="108dp"
+            android:text="@string/createButton"
+            android:textAlignment="center" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
